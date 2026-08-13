@@ -1,0 +1,33 @@
+[project]
+name = "helpdesk-api"
+version = "0.1.0"
+description = "Phase 1 local-development API"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.116,<1",
+    "psycopg[binary]>=3.2,<4",
+    "pydantic-settings>=2.10,<3",
+    "sqlmodel>=0.0.24,<0.1",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28,<1",
+    "pyright>=1.1.400,<2",
+    "pytest>=8.4,<9",
+    "ruff>=0.12,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+include = ["app", "tests"]

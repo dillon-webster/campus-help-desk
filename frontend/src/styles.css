@@ -1,0 +1,164 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.site-header {
+  padding: 3rem max(1.25rem, calc((100vw - 72rem) / 2));
+  color: white;
+  background: #172033;
+}
+
+.site-header h1 {
+  margin: 0.25rem 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.site-header p {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+  gap: 2rem;
+  width: min(72rem, calc(100% - 2.5rem));
+  margin: 2rem auto;
+  align-items: start;
+}
+
+.section-heading,
+.ticket-card__header,
+.ticket-card__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.section-heading h2,
+.section-heading p {
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  align-items: center;
+}
+
+.ticket-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ticket-card,
+.ticket-form {
+  padding: 1.25rem;
+  border: 1px solid #d9dfeb;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 0.4rem 1.2rem rgb(23 32 51 / 0.06);
+}
+
+.ticket-card h3 {
+  margin: 0;
+}
+
+.ticket-card__footer {
+  color: #5c667a;
+  font-size: 0.875rem;
+}
+
+.ticket-form fieldset {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+}
+
+.ticket-form legend {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #aeb8ca;
+  border-radius: 0.4rem;
+  background: white;
+}
+
+button {
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  color: white;
+  background: #3157d5;
+  font-weight: 700;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #9cb0ff;
+  outline-offset: 2px;
+}
+
+[role="alert"] {
+  padding: 0.75rem;
+  border-left: 0.25rem solid #a60024;
+  background: #fff0f3;
+}
+
+@media (max-width: 800px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
