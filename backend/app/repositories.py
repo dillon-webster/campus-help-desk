@@ -19,8 +19,8 @@ def list_tickets(
 
     if status is not None:
         statement = statement.where(Ticket.status == status)
-        if priority is not None:
-            statement = statement.where(Ticket.priority == priority)
+    if priority is not None:
+        statement = statement.where(Ticket.priority == priority)
 
     # STUDENT TASK: Apply the priority filter when priority is not None.
 

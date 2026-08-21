@@ -41,7 +41,6 @@ export default function App() {
   useEffect(() => {
     void loadTickets();
   }, [loadTickets]);
-
   async function createTicket(ticketCreate: TicketCreate): Promise<void> {
     const createdTicket = await ticketApi.create(ticketCreate);
     setTickets((current) => [createdTicket, ...current]);

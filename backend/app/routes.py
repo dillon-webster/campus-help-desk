@@ -43,9 +43,9 @@ def read_ticket(ticket_id: int, session: SessionDependency) -> TicketPublic:
     return ticket
 
 
-
 @router.post("", response_model=TicketPublic, status_code=status.HTTP_201_CREATED)
 def add_ticket(ticket_create: TicketCreate, session: SessionDependency) -> TicketPublic:
+
     return create_ticket(session, ticket_create)
 
 

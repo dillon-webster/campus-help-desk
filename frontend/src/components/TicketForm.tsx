@@ -19,13 +19,13 @@ const INITIAL_STATE: TicketFormState = {
 
 
 export function TicketForm({ onCreate }: TicketFormProps) {
-  
+
   const [formState, setFormState] = useState<TicketFormState>(INITIAL_STATE);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
 
-  
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     // 1. Set the submitting state
@@ -40,29 +40,29 @@ export function TicketForm({ onCreate }: TicketFormProps) {
     } finally {
       setIsSubmitting(false);
     }
-    
+
     // 4. Reset the form after success
     // 5. Display a useful message after failure
     // 6. Always clear the submitting state
     setFormState(INITIAL_STATE);
-    
-    
+
+
     //setErrorMessage("Ticket creation has not been implemented.");
   }
   return (
-  <form className="ticket-form" onSubmit={(event) => void handleSubmit(event)}>
+    <form className="ticket-form" onSubmit={(event) => void handleSubmit(event)}>
       <fieldset disabled={isSubmitting}>
         <legend>Create a support ticket</legend>
 
         <label htmlFor="title">Title</label>
         <input
-          id="title" 
+          id="title"
           minLength={3}
           maxLength={120}
           required
           value={formState.title}
           onChange={(event) => {
-          setFormState((current) => ({...current, title: event.target.value }));
+            setFormState((current) => ({ ...current, title: event.target.value }));
           }}
         />
 
@@ -77,7 +77,7 @@ export function TicketForm({ onCreate }: TicketFormProps) {
           onChange={(event) => {
             setFormState((current) => ({ ...current, description: event.target.value }))
           }}
-          />
+        />
 
         <label htmlFor="priority">Priority</label>
         <select
@@ -85,12 +85,12 @@ export function TicketForm({ onCreate }: TicketFormProps) {
           value={formState.priority}
 
           onChange={(event) => {
-          setFormState((current) => ({...current, priority: event.target.value as TicketPriority,}));
+            setFormState((current) => ({ ...current, priority: event.target.value as TicketPriority, }));
           }}
-          >
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
+        >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
         <button type="submit">
           {isSubmitting ? "Creating..." : "Create ticket"}
@@ -99,7 +99,7 @@ export function TicketForm({ onCreate }: TicketFormProps) {
 
       {errorMessage != null && <p role="alert">{errorMessage}</p>}
 
-      
+
 
     </form>
 
