@@ -20,6 +20,6 @@ export interface TicketCreate {
 }
 
 export interface TicketFilters {
-  status?: TicketStatus;
-  priority?: TicketPriority;
+  status: string;
+  priority: TicketStatus;
 }

@@ -3,6 +3,7 @@ import { ticketApi } from "./api/tickets";
 import { TicketFilters } from "./components/TicketFilters";
 import { TicketForm } from "./components/TicketForm";
 import { TicketList } from "./components/TicketList";
+// import HelloLogger from "./components/HelloLogger";
 import type {
   Ticket,
   TicketCreate,
@@ -25,6 +26,7 @@ export default function App() {
       const loadedTickets = await ticketApi.list({
         ...(statusFilter === "" ? {} : { status: statusFilter }),
         // STUDENT TASK: Include priorityFilter when it is not empty.
+        ...(priorityFilter === "" ? {} : { priority: priorityFilter }),
       });
       setTickets(loadedTickets);
     } catch (error: unknown) {
@@ -34,7 +36,7 @@ export default function App() {
     } finally {
       setIsLoading(false);
     }
-  }, [statusFilter]);
+  }, [statusFilter, priorityFilter]);
 
   useEffect(() => {
     void loadTickets();
@@ -56,6 +58,7 @@ export default function App() {
       </header>
 
       <main className="page-layout">
+        {/* <HelloLogger /> */}
         <section aria-labelledby="tickets-heading">
           <div className="section-heading">
             <div>

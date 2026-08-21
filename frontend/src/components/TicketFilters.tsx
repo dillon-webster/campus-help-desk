@@ -1,4 +1,4 @@
-import type { TicketPriority, TicketStatus } from "../types/ticket";
+import type { TicketPriority, TicketStatus, TicketFilters} from "../types/ticket";
 
 interface TicketFiltersProps {
   status: TicketStatus | "";

@@ -9,6 +9,9 @@ function buildQueryString(filters: TicketFilters): string {
   }
 
   // STUDENT TASK: Add priority when it is defined.
+  if (filters.priority !== undefined) {
+    searchParams.set("priority", filters.priority);
+  }
 
   const query = searchParams.toString();
   return query.length === 0 ? "" : `?${query}`;

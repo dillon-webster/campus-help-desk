@@ -20,12 +20,12 @@
 ## Checkpoint 3 — Frontend
 
 - [|] Fix CORS error.
-- [ ] Loading state is visible while waiting.
-- [ ] API errors produce a useful message.
-- [ ] Empty results produce an empty state.
-- [ ] Ticket data is rendered with semantic HTML.
-- [ ] Creation form is controlled and strictly typed.
-- [ ] Successful creation updates the list.
+- [|] Loading state is visible while waiting.
+- [|] API errors produce a useful message.
+- [|] Empty results produce an empty state.
+- [|] Ticket data is rendered with semantic HTML.
+- [|] Creation form is controlled and strictly typed.
+- [|] Successful creation updates the list.
 
 ## Checkpoint 4 — Vertical feature
 
