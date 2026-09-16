@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import type { TicketCreate, TicketPriority } from "../types/ticket";
 
 interface TicketFormProps {
